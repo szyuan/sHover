@@ -61,6 +61,6 @@ pre strong { color: #00FFF6; font-weight: normal;}
 .footer h2{text-align: center; padding:10px 0 0; color:#2D8AB1; }
 .footer h3{text-align: center; padding:0px; color:#555; font-weight: normal; }
 #gitHubIcon{width: 90px;height: 90px;}
-.downloadBtn{text-align: center; }
-.downloadBtn button{padding:8px; font-size: 18px; font-weight: bold; font-family: "Arial"; background:powderblue; border:none; border-radius: 10px; color: firebrick; border-bottom:4px solid #62CBD8}
+.downloadBtn button{padding:8px; font-size: 18px; color:#26677B; font-weight: bold; font-family: "Arial"; background:powderblue; border:none; border-radius: 10px; border-bottom:4px solid #62CBD8}
 .downloadBtn button:hover{background:#99E1FF;}
+.downloadBtn a{font-weight: bold; font-family: "Arial"; font-size: 18px; text-decoration: none; color:#26677B;}
