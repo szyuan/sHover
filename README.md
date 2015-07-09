@@ -3,4 +3,4 @@
 多个图片放在一起效果更酷炫噢！它的使用和设置都非常方便。
 而且兼容性上表现非常出色，在IE5及以上都可能完美运行。
 不需要JQuery哦。
-[实例下载链接 http://pan.baidu.com/s/1dD6ONWt ]
+【实例下载链接 http://pan.baidu.com/s/1dD6ONWt 】
