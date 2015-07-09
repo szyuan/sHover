@@ -1,0 +1,56 @@
+#testWrap{margin:100px 100px; padding:100px; position: relative; border-top: 1px solid red;}
+.testItem{width:300px;height:200px;background:powderblue;}
+.testIntro{background:firebrick;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{margin: 0; padding: 0; }
+.head{background-color:#72A6CB; height: 450px; text-align: center; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6); }
+.head h1{font-size: 50px; color: white; margin:0; padding:0;}
+#headImg{margin: 40px auto 20px;}
+.head h2{font-size: 20px; color: white; max-width: 900px; padding:0;font-weight: normal; margin:30px auto 0; line-height: 1.5em;}
+.head .headIntro{ height: 100px;}
+.head .headIntro h1{text-align: center;}
+#headLine{ margin:250px auto 0; height: 2px; background: #EEE; width: 200px; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);}
+.headIntro h2{font-size: 20px; color: white; max-width: 900px; padding:0;font-weight: normal; margin:30px auto 0; line-height: 1.5em;}
+.hideText{text-shadow:none; color: rgba(0,0,0,0);}
+#headH2{border-bottom: 1px solid #FFF;}
+#headBtn{padding:10px; background:#E04E5E; border-radius: 10px; text-decoration: none; font-family: "arial"; color: white; position: relative; top:20px; font-style: 20px;}
+#headBtn:hover{background:#FF5F5F }
+/*--------------------------------*/
+#adventage{width: 90%; margin:20px auto; list-style-type:none; overflow: hidden;}
+#adventage li{float: left; width: 33%; text-align: center;}
+#adventage li h3{color: #004666}
+#adventage li p{padding-right: 20px; color: #A32121; font-size: 16px;}
+/*--------------------------------*/
+#part1{background:#ECFCFF; min-height: 400px; position: relative;}
+#part1 h2{color:#555; font-size: 30px; padding:30px 30px 0; text-align: center;}
+#part1 h3{color:#004666; margin: 30px; text-align: center;}
+#part1 .example1{width: 300px;height: 200px;background:powderblue; margin: 30px;}
+#part1 .example1 .intro1{background:firebrick;}
+/*--------------------------------*/
+.sHoverItem{width: 260px; height: 180px;  margin:10px; float: left; font-family: "arial"; border: 6px solid #ccc;}
+.sIntro{background-color: rgb(235,137,112); text-align: center; font-family: "arial";}
+.container{width: 1168px; height: 636px; border:solid 1px #ddd; margin: 20px auto; background:powderblue; }
+.sHoverItem img{height:180px; width:260px;}
+.sIntro h2{font-family: "arial"; font-size:36px; text-align: center; color: #FFF; border-bottom: 1px dashed #fff;margin:0px 20px; padding:10px;}
+.sIntro p{font-size:14px; text-align: center; color: #FFF; margin:0px 10px; padding: 10px; color: #438199;}
+.sIntro button{font-family: "arial"; font-size:16px; color: white;  background-color: #0AB5DA; border:none; border-radius: 10px; padding:4px 10px; }

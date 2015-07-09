@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sHover Example | 感应鼠标进出方向悬浮效果</title>
+	<link rel="stylesheet" href="css/example.css">
+	<script src="js/sHover.js"></script>
+	<script>
+	window.onload=function(){
+		var downLoadBtn=document.getElementById('headBtn');
+		downLoadBtn.onclick=function(){
+			scrollToBottom(downLoadBtn);
+		}
+
+		 var b=new sHover('head','headIntro');
+
+		 var a=new sHover("sHoverItem","sIntro");
+		 a.set({
+		 	slideSpeed:5,
+		 	opacityChange:true,
+		 	opacity:80
+		 });
+
+		 
+		 var example1Btn=document.getElementById('example1Btn');
+		 var part1arrow=document.getElementById('part1arrow');
+		 var example1=document.getElementById('example1');
+		 example1Btn.onclick=function(){
+		 	part1arrow.style.display='block';
+		 	var example1=new sHover("example1","intro1");
+		 }		
+
+		 var example2=new sHover('example2','intro2');
+		 example2.set({
+		 	slideSpeed:7,
+			opacity:80,						
+			opacityChange:true	
+		 });
+		 var example2prev=new sHover('example2prev','intro2prev');
+		 example2prev.set({
+		 });
+
+	}
+	function scrollToBottom(a){
+		// alert(document.body.scrollHeight+'\n'+document.documentElement.clientHeight+'\n'+window.innerHeight+'\n'+window.screen.height);
+		if(windowHeight()){
+			clearInterval(a.scrollTimer);
+			var scrollSpeed=100;
+			a.scrollTimer=setInterval(function(){
+				document.documentElement.scrollTop+=scrollSpeed;
+				document.body.scrollTop+=scrollSpeed;
+				document.title=(document.documentElement.scrollHeight-windowHeight())+"/"+document.body.scrollTop;
+				if((document.documentElement.scrollTop>=(document.documentElement.scrollHeight-windowHeight()))||(document.body.scrollTop>=(document.documentElement.scrollHeight-windowHeight()))){
+					clearInterval(a.scrollTimer);
+				}
+			},13);
+		}else{
+			//a.setAttribute('href', 'http://www.baidu.com');
+		}
+	}
+	function windowHeight(){
+		if(document.documentElement){
+			return document.documentElement.clientHeight;
+		}else{
+			return document.body.clientHeight;
+		}	
+	}
+	</script>
+</head>
+<body id="body">
+	
+	<div class="head">
+		<img src="images/headImg.png" alt="" id="headImg">
+		<h1>sHover</h1>
+		<h2>这是一个简单的原生JavaScript插件<span class="hideText" id="headH2">，它可以让你的展示图片感应鼠标进入方向，从而让悬浮层做出不同的运动效果，多个图片放在一起效果更酷炫噢！它的使用和设置都非常方便，更重要的是它能用在几乎所有的浏览器上啊！（至少IE5及以上吧），</span>快来下载试试吧。</h2>
+		<span class="headIntro">
+			<div id="headLine"></div>
+			<h2><span class="hideText">这是一个简单的原生JavaScript插件</span>，它可以让你的展示图片感应鼠标进入方向，从而让悬浮层做出不同的运动效果，多个图片放在一起效果更酷炫噢！它的使用和设置都非常方便，更重要的是它能用在几乎所有的浏览器上啊！（至少IE5及以上吧），<span class="hideText">快来下载试试吧。</span></h2>
+			<a href="#" id="headBtn">Download !</a>
+		</span>
+	</div>
+	<ul id="adventage">
+		<li>
+			<img src="images/fast.png" alt="">
+			<h3>使用简单</h3>
+			<p>sHover是一个纯原生JavaScript编写的小组件，<strong>不需要引入JQuery</strong>或其他插件就可以使用。使用非常简单，引入sHover的js文件之后，只需一行代码，即可让你的图片展示瞬间炫酷起来</p>
+		</li>
+		<li>
+			<img src="images/color.png" alt="">
+			<h3>多样设置</h3>
+			<p>有很多不同的效果可以在创建默认的效果之后进行设置，并且设置方法非常简单。可以设置悬浮层在运动时的许多状态。</p>
+		</li>
+		<li>
+			<img src="images/compare.png" alt="">
+			<h3>超强兼容</h3>
+			<p>它的在所有新版本的浏览器上都能完美运行，除此之外，它甚至能在IE5及以前的浏览器上运行，并且效果几乎没有影响<strong>（由于这个页面用了大量CSS3的属性，而我实在懒得做更多修改，所以这个页面会在低版本浏览器下变乱，但是JS效果绝对不会出问题！）</strong></p>
+		</li>
+	</ul>
+	<div id="part1"  class="part">
+		<h2>一句话使用sHover</h2>
+		<h3>1.将结构搭好，并设置了基本样式之后</h3>
+		<div class="example1">
+			<h1>example1</h1>
+			<span class="intro1">
+				<h2>intro1</h2>
+			</span>
+		</div>
+		<pre id="p1pre1">
+&lt;div class="example1"&gt;
+	&lt;span class="intro1"&gt;&lt;/span&gt;
+&lt;/div&gt;
+			<strong>
+.example1{
+	width: 300px;
+	height: 300px;
+	background:powderblue;
+}
+.intro1{
+	background:firebrick;
+}</strong>
+		</pre>
+		<h3 id="p1h2">2.只需执行这条语句</h3>
+		<pre id="p1pre2">var example1=new sHover("example1","intro1");<button id="example1Btn">点击执行这条语句</button></pre>
+		<h3 id="p1h3">3.再把鼠标移上去看看</h3>
+		<img id="part1arrow" src="images/arrow.png" height="300" width="200px" alt="" />
+	</div>
+	<div id="part2" class="part">
+		<h2>sHover的设置</h2>
+		<div class="row">
+			<div class="left">
+				<h4>设置滑动速度</h4>
+				<p>悬浮层滑入滑出的速度，默认值为5，取值范围0-10</p>
+			</div>
+			<div class="right">
+				<pre>example1.set({
+	speed:7
+});</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="left">
+				<h4>设置透明度</h4>
+				<p>设置悬浮层的最终透明度，默认值为100，取值范围0-100</p>
+			</div>
+			<div class="right">
+				<pre>example1.set({
+	opacity:80
+});</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="left">
+				<h4>是否开启滑动时淡入淡出</h4>
+				<p>默认值为false，可设为true</p>
+			</div>
+			<div class="right">
+				<pre>example1.set({			
+	opacityChange:true
+});</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="left">
+				<h4>设置前后效果预览</h4>
+				<div class="example2wrap">
+					<div id="e2prev" class="example2prev">
+						<h2>设置前</h2>
+					<span class="intro2prev"></span>
+					</div>
+					<div id="e2next" class="example2">
+						<h2>设置后</h2>
+						<span class="intro2"></span>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<pre>example1.set({
+	speed:7,
+	opacity:80,						
+	opacityChange:true
+});</pre>
+			</div>
+		</div>
+	</div>
+	<div id="part3" class="part">
+		<h2>sHover的炫酷使用实例</h2>
+		<div class="container">
+			<div id="item1" class="sHoverItem">
+				<img id="img1" src="images/1.jpg">
+				<span id="intro1" class="sIntro">
+					<h2>Flowers</h2>	
+					<p>Flowers are so inconsistent! But I was too young to know how to love her</p>
+					<button>inconsistent</button>
+				</span>
+			</div>
+			<div id="item2" class="sHoverItem">
+				<img src="images/2.jpg">
+				<span class="sIntro">
+					<h2>You know</h2>	
+					<p>one loves the sunset, when one is so sad</p>
+					<button>sunset</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/3.jpg">
+				<span class="sIntro">
+					<h2>For</h2>	
+					<p>For she did not want him to see her crying. She was such a proud flower</p>
+					<button>crying</button>	
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/4.jpg">
+				<span class="sIntro">
+					<h2>Volcanoes</h2>	
+					<p>It is of some use to my volcanoes, and it is of some use to my flower, that I own them. But you are of no </p>
+					<button>use to the stars</button>	
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/5.jpg">
+				<span class="sIntro">
+					<h2>I thought</h2>	
+					<p>I thought that I was rich, with a flower that was unique in all the world; and all I had was a common</p>
+					<button>rose</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/6.jpg">
+				<span class="sIntro">
+					<h2>For she</h2>	
+					<p>For she did not want him to see her crying. She was such a proud flower</p>
+					<button>a proud flower</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/7.jpg">
+				<span class="sIntro">
+					<h2>Thorns</h2>	
+					<p>She has only four thorns to defend herself against the world. And I have left on my planet, all alone!</p>
+					<button>alone</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/8.jpg">
+				<span class="sIntro">
+					<h2>A little boy</h2>	
+					<p>To me, you are still nothing more than a little boy who is just like a hundred thousand other little boys.</p>
+					<button>boys</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/9.jpg">
+				<span class="sIntro">
+					<h2>And I</h2>	
+					<p>And I have no need of you. And you, on your part, have no need of me.</p>
+					<button>no need of me</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/10.jpg">
+				<span class="sIntro">
+					<h2>Foxes</h2>	
+					<p>I am nothing more than a fox like a hundred thousand other foxes.</p>
+					<button>nothing</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/11.jpg">
+				<span class="sIntro">
+					<h2>Tame</h2>	
+					<p>But if you tame me, then we shall need each other.</p>
+					<button>need</button>
+				</span>
+			</div>
+			<div class="sHoverItem">
+				<img src="images/12.jpg">
+				<span class="sIntro">
+					<h2>Unique</h2>	
+					<p>To me,you will be unique in all the world. To you, I shall be unique in all the world. </p>
+					<button>unique</button>
+				</span>
+			</div>
+		</div><!-- /container -->	
+		<div class="row">
+			<div class="left">
+				<h4>单个元素内部HTML结构</h4>
+				<p>为所有元素加上统一的class，以方便统一设置运动效果和样式，可以在主容器和悬浮页内放入任何你需要元素，也可以给他们加上你喜欢的样式。我在主容器里放了一张图片，悬浮窗内放了标题，文章和按钮。</p>
+			</div>
+			<div class="right">
+				<pre>&lt;div id="item1" class="sHoverItem"&gt;
+	&lt;img id="img1" src="images/1.jpg"&gt;
+	&lt;span id="intro1" class="sIntro"&gt;
+		&lt;h2&gt;Flowers&lt;/h2&gt;
+		&lt;p&gt; Flowers are so inconsistent!  &lt;/p&gt;
+		&lt;button&gt;inconsistent&lt;/button&gt;
+	&lt;/span&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="left">
+				<h4>启用组件和效果的设置</h4>
+				<p>根据你想要达到的效果，灵活的设置动画效果的各种参数吧！右边是我为这个图片展示界面设置的效果。</p>
+			</div>
+			<div class="right">
+				<pre>var a=new sHover("sHoverItem","sIntro");
+ a.set({
+ 	slideSpeed:5,
+ 	opacityChange:true,
+ 	opacity:80
+ });</pre>
+			</div>
+		</div>	
+	</div><!-- /part3 -->
+
+<div class="footer">
+	<h1>sHover</h1>
+	<h2>还有更多有趣的用法,赶紧下载来试用一下吧！</h2>
+	<h3>觉得不错就在GitHub上点个赞★哦</h3>
+	<img src="images/gitHub.png" id="gitHubIcon" alt="gitHub">
+	<div class="downloadBtn">
+		<button id="downloadMin">下载压缩版（2.8KB）</button>
+		<button id="download">下载源码（5.7KB）</button>
+	</div>	
+</div>
+
+</body>
+</html>
