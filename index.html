@@ -42,14 +42,12 @@
 
 	}
 	function scrollToBottom(a){
-		// alert(document.body.scrollHeight+'\n'+document.documentElement.clientHeight+'\n'+window.innerHeight+'\n'+window.screen.height);
 		if(windowHeight()){
 			clearInterval(a.scrollTimer);
 			var scrollSpeed=100;
 			a.scrollTimer=setInterval(function(){
 				document.documentElement.scrollTop+=scrollSpeed;
 				document.body.scrollTop+=scrollSpeed;
-				document.title=(document.documentElement.scrollHeight-windowHeight())+"/"+document.body.scrollTop;
 				if((document.documentElement.scrollTop>=(document.documentElement.scrollHeight-windowHeight()))||(document.body.scrollTop>=(document.documentElement.scrollHeight-windowHeight()))){
 					clearInterval(a.scrollTimer);
 				}

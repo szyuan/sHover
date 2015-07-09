@@ -11,14 +11,7 @@
  			thisItem.size={
  				width:_this.getStyle(thisItem,'width'),
  				height:_this.getStyle(thisItem,'height')
- 				// width:thisItem.offsetWidth,
- 				// height:thisItem.offsetHeight
  			};
-
- 				// alert(thisItem.size.height);
- 			// if(thisItem.size.width||){
- 				
- 			// }
 			// 设置默认的样式
 			thisItem.style.position='relative';
 			thisItem.style.overflow='hidden';
@@ -55,14 +48,12 @@
 	}
 	sHover.prototype.trigger=function(item,dir,ev){
 		try{
-			// document.title=ev.relatedTarget;
 			if(item.contains(ev.relatedTarget)){
 				return false;
 			}else if(!ev.relatedTarget){
 				throw new error();
 			}
 		}catch(exception){
-			// alert(2);
 			if(dir=='in'){
 				if(item.contains(ev.fromElement)){
 					return false;
@@ -224,13 +215,3 @@
 	    eventType = e.type;
 	  	return direction;
 	}
-	// 	sHover.prototype.getDir=function(e,item){
-	// 	var e=e||event;
-	// 	var w = this.getStyle(item,'width'),
-	//         h = this.getStyle(item,'height'),
-	//         x = ( e.clientX - item.offsetLeft - ( w / 2 ) ) * ( w > h ? ( h / w ) : 1 ),
-	//         y = (e.clientY - item.offsetTop - (h / 2)) * (h > w ? (w / h) : 1),
-	//     direction = Math.round( ( ( ( Math.atan2( y, x ) * ( 180 / Math.PI ) ) + 180 ) / 90) + 3 ) % 4,
-	//     eventType = e.type;
-	//   	return direction;
-	// }
